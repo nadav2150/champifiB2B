@@ -1,4 +1,5 @@
 "use client";
+
 import { usePathname } from "next/navigation";
 import { useState, type FC } from "react";
 import { MdDashboard } from "react-icons/md";
@@ -7,7 +8,7 @@ import { FaMoneyBillWave } from "react-icons/fa";
 import { FaCalendarWeek } from "react-icons/fa";
 import { IoSettings } from "react-icons/io5";
 import Link from "next/link";
-import { redirect } from 'next/navigation';
+import { TiThMenu } from "react-icons/ti";
 
 interface SideBarProps {}
 
@@ -23,12 +24,12 @@ const SideBar: FC<SideBarProps> = () => {
   const currentRoute = usePathname();
   const selectedIndex = List.findIndex((item) => item.route === currentRoute);
   const initialSelectedIndex = selectedIndex === -1 ? 0 : selectedIndex;
-  const [isOpen, setOpen] = useState(true);
+  const [isOpen, setOpen] = useState(false);
   const [isSelect, setSelect] = useState(initialSelectedIndex);
   return (
     <div>
       <div
-        className={`h-screen duration-300 text-white w-72 bg-slate-800 p-5 relative ${
+        className={`h-screen duration-300 ${!isOpen && 'xs:max-sm:hidden'} text-white bg-slate-800 p-5 relative ${
           isOpen ? "w-72" : "w-20"
         }`}
       >
@@ -62,6 +63,13 @@ const SideBar: FC<SideBarProps> = () => {
             );
           })}
         </div>
+      </div>
+      <div className={`pt-8 pl-5 sm:hidden' ${isOpen && 'hidden'}`}>
+      <TiThMenu 
+            onClick={() => setOpen(!isOpen)}
+            className={`text-xl  text-orange-500 cursor-pointer duration-700`}
+            width={40}
+          />
       </div>
     </div>
   );
