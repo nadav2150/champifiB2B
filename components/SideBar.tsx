@@ -19,6 +19,7 @@ const List = [
 
 const SideBar: FC<SideBarProps> = () => {
   const [isOpen, setOpen] = useState(true);
+  const [isSelect, setSelect] = useState(0);
   return (
     <div>
       <div
@@ -29,7 +30,9 @@ const SideBar: FC<SideBarProps> = () => {
         <div className="flex items-center gap-1 text-2xl">
           <img
             onClick={() => setOpen(!isOpen)}
-            className={`text-xl  text-orange-500 cursor-pointer duration-700 ${isOpen && "rotate-[360deg]"}`}
+            className={`text-xl  text-orange-500 cursor-pointer duration-700 ${
+              isOpen && "rotate-[360deg]"
+            }`}
             width={40}
             src="/logo_1.png"
           />
@@ -41,9 +44,12 @@ const SideBar: FC<SideBarProps> = () => {
             return (
               <div
                 key={index}
-                className="flex items-center gap-2 cursor-pointer hover:bg-slate-700 p-2 rounded-md"
+                className={`flex items-center gap-2 cursor-pointer p-2 rounded-md ${
+                    isSelect === index ? "bg-orange-700" : "hover:bg-slate-700"
+                }`}
+                onClick={() => setSelect(index)}
               >
-                <div> {item.icon}</div>
+                <div>{item.icon}</div>
 
                 <div className={`${!isOpen && "scale-0"}`}>{item.name}</div>
               </div>
