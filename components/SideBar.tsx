@@ -1,25 +1,30 @@
 "use client";
-
+import { usePathname } from "next/navigation";
 import { useState, type FC } from "react";
 import { MdDashboard } from "react-icons/md";
 import { GrGroup } from "react-icons/gr";
 import { FaMoneyBillWave } from "react-icons/fa";
 import { FaCalendarWeek } from "react-icons/fa";
 import { IoSettings } from "react-icons/io5";
+import Link from "next/link";
+import { redirect } from 'next/navigation';
 
 interface SideBarProps {}
 
 const List = [
-  { name: "Dashboard", icon: <MdDashboard size={24} /> },
-  { name: "Teams", icon: <GrGroup size={24} /> },
-  { name: "Payments", icon: <FaMoneyBillWave size={24} /> },
-  { name: "Calendar", icon: <FaCalendarWeek size={24} /> },
-  { name: "Settings", icon: <IoSettings size={24} /> },
+  { name: "Dashboard", icon: <MdDashboard size={24} />, route: "/dashboard" },
+  { name: "Teams", icon: <GrGroup size={24} />, route: "/teams" },
+  { name: "Payments", icon: <FaMoneyBillWave size={24} />, route: "/payments" },
+  { name: "Calendar", icon: <FaCalendarWeek size={24} />, route: "/calendar" },
+  { name: "Settings", icon: <IoSettings size={24} />, route: "/settings" },
 ];
 
 const SideBar: FC<SideBarProps> = () => {
+  const currentRoute = usePathname();
+  const selectedIndex = List.findIndex((item) => item.route === currentRoute);
+  const initialSelectedIndex = selectedIndex === -1 ? 0 : selectedIndex;
   const [isOpen, setOpen] = useState(true);
-  const [isSelect, setSelect] = useState(0);
+  const [isSelect, setSelect] = useState(initialSelectedIndex);
   return (
     <div>
       <div
@@ -42,17 +47,18 @@ const SideBar: FC<SideBarProps> = () => {
         <div className="flex flex-col gap-2 mt-5">
           {List.map((item, index) => {
             return (
-              <div
-                key={index}
-                className={`flex items-center gap-2 cursor-pointer p-2 rounded-md ${
+              <Link href={item.route} key={index}>
+                <div
+                  className={`flex items-center gap-2 cursor-pointer p-2 rounded-md ${
                     isSelect === index ? "bg-orange-700" : "hover:bg-slate-700"
-                }`}
-                onClick={() => setSelect(index)}
-              >
-                <div>{item.icon}</div>
+                  }`}
+                  onClick={() => setSelect(index)}
+                >
+                  <div>{item.icon}</div>
 
-                <div className={`${!isOpen && "scale-0"}`}>{item.name}</div>
-              </div>
+                  <div className={`${!isOpen && "scale-0"}`}>{item.name}</div>
+                </div>
+              </Link>
             );
           })}
         </div>
