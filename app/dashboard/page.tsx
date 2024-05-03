@@ -21,9 +21,9 @@ export default function Dashboard() {
               alt="Picture of the author"
             />
       </div>
-      <div id='body' className="grid grid-rows-[500px] auto-rows-[500px]  grid-cols-[repeat(auto-fit,_minmax(500px,_1fr))]  gap-4">
+      <div id='body' className="flex flex-wrap">
         <CalendarWidget />
-        <PaymentsWidget />
+        {/* <PaymentsWidget /> */}
         {/* <PaymentsWidget />
         <TeamWidget/>
 

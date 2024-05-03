@@ -32,9 +32,9 @@ const SideBar: FC<SideBarProps> = () => {
   const [isSelect, setSelect] = useState(initialSelectedIndex);
 
   return (
-    <div>
+    <div className={`xs:max-sm:absolute`}>
       <div
-        className={`h-screen duration-300 ${!isOpen && 'xs:max-sm:hidden'} text-white bg-[#1C274C] p-5 relative ${
+        className={`h-screen duration-300  ${!isOpen && 'xs:max-sm:hidden'} text-white bg-[#1C274C] p-5 relative ${
           isOpen ? "w-72" : "w-20"
         }`}
       >
@@ -50,7 +50,7 @@ const SideBar: FC<SideBarProps> = () => {
           <p className={`${!isOpen && "scale-0"}`}>CHAMPIFI</p>
         </div>
         <hr className="my-1 h-0.5 border-t-0 bg-neutral-500" />
-        <div className="flex flex-col gap-2 mt-5">
+        <div className="flex flex-col gap-2 mt-5 ">
           {List.map((item, index) => {
             return (
               <Link href={item.route} key={index}>
@@ -71,10 +71,10 @@ const SideBar: FC<SideBarProps> = () => {
           })}
         </div>
       </div>
-      <div className={`pt-8 pl-5 sm:hidden' ${true && 'hidden'}`}>
+      <div id="mobile-menu" className={`pt-8 pl-4 pl z-50 absolute-5 sm:hidden ${isOpen && 'hidden'}`}>
       <TiThMenu 
             onClick={() => setOpen(!isOpen)}
-            className={`text-xl  text-orange-500 cursor-pointer duration-700`}
+            className={`text-xl text-orange-500 cursor-pointer duration-700`}
             width={40}
           />
       </div>
