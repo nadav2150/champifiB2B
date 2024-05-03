@@ -9,6 +9,8 @@ import { FaCalendarWeek } from "react-icons/fa";
 import { IoSettings } from "react-icons/io5";
 import Link from "next/link";
 import { TiThMenu } from "react-icons/ti";
+import { MdNotificationsActive } from "react-icons/md";
+import { IoDocumentSharp } from "react-icons/io5";
 
 interface SideBarProps {}
 
@@ -17,6 +19,8 @@ const List = [
   { name: "Teams", icon: <GrGroup size={24} />, route: "/teams" },
   { name: "Payments", icon: <FaMoneyBillWave size={24} />, route: "/payments" },
   { name: "Calendar", icon: <FaCalendarWeek size={24} />, route: "/calendar" },
+  { name: "Notifications", icon: <MdNotificationsActive size={24} />, route: "/notifications" },
+  { name: "Documents", icon: <IoDocumentSharp size={24} />, route: "/documents" },
   { name: "Settings", icon: <IoSettings size={24} />, route: "/settings" },
 ];
 
@@ -26,10 +30,11 @@ const SideBar: FC<SideBarProps> = () => {
   const initialSelectedIndex = selectedIndex === -1 ? 0 : selectedIndex;
   const [isOpen, setOpen] = useState(false);
   const [isSelect, setSelect] = useState(initialSelectedIndex);
+
   return (
     <div>
       <div
-        className={`h-screen duration-300 ${!isOpen && 'xs:max-sm:hidden'} text-white bg-slate-800 p-5 relative ${
+        className={`h-screen duration-300 ${!isOpen && 'xs:max-sm:hidden'} text-white bg-[#1C274C] p-5 relative ${
           isOpen ? "w-72" : "w-20"
         }`}
       >
@@ -49,9 +54,11 @@ const SideBar: FC<SideBarProps> = () => {
           {List.map((item, index) => {
             return (
               <Link href={item.route} key={index}>
+              
                 <div
+
                   className={`flex items-center gap-2 cursor-pointer p-2 rounded-md ${
-                    isSelect === index ? "bg-orange-700" : "hover:bg-slate-700"
+                    isSelect === index ? "bg-gradient-to-r from-[#F2612C] to-[#FCCC0B]" : "hover:bg-slate-700"
                   }`}
                   onClick={() => setSelect(index)}
                 >
@@ -64,7 +71,7 @@ const SideBar: FC<SideBarProps> = () => {
           })}
         </div>
       </div>
-      <div className={`pt-8 pl-5 sm:hidden' ${isOpen && 'hidden'}`}>
+      <div className={`pt-8 pl-5 sm:hidden' ${true && 'hidden'}`}>
       <TiThMenu 
             onClick={() => setOpen(!isOpen)}
             className={`text-xl  text-orange-500 cursor-pointer duration-700`}
