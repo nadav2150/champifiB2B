@@ -19,6 +19,9 @@
 body {
   color: black !important;
   background: #FBFBFB;
+  .dark {
+    background: red;
+  }
 }
 
 @layer utilities {

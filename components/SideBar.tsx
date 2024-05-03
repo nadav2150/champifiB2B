@@ -34,7 +34,7 @@ const SideBar: FC<SideBarProps> = () => {
   return (
     <div className={`xs:max-sm:absolute`}>
       <div
-        className={`h-screen duration-300  ${!isOpen && 'xs:max-sm:hidden'} text-white bg-[#1C274C] p-5 relative ${
+        className={`h-screen duration-300  ${!isOpen && 'xs:max-sm:hidden'} text-white bg-[#1C274C] dark:bg-[#232429] p-5 relative ${
           isOpen ? "w-72" : "w-20"
         }`}
       >

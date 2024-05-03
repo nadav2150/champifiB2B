@@ -16,11 +16,11 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body  className={inter.className}>
+    <html lang="en" className="dark">
+      <body   className={`${inter.className} dark:bg-[#1E1F23] dark:text-white`}>
         <div className="flex">
         <SideBar />
-        <div className="w-full">
+        <div className="w-full ">
         {children}
         </div>
         </div>
