@@ -22,10 +22,10 @@ export default function Dashboard() {
               alt="Picture of the author"
             />
       </div>
-      <div id='body' className="flex flex-wrap">
+      <div id='body' className="flex flex-wrap gap-8">
         <CalendarWidget />
         <FinancialWidget/>
-        {/* <PaymentsWidget /> */}
+        <PaymentsWidget />
         {/* <PaymentsWidget />
         <TeamWidget/>
 
