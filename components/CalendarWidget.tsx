@@ -17,7 +17,7 @@ const CalendarWidget: FC<CalendarWidgetProps> = () => {
   const [activeItemIndex, setActiveItemIndex] = useState(0);
 
   return (
-    <div className=" w-[450px]">
+    <div className="min-w-[350px] xs:max-sm:min-w-full  flex-1">
       <div className="text-xl dark:text-white">Upcoming Events</div>
       <div className="">
         <div className=" p-4 flex flex-col mt-2 dark:bg-[#232429] bg-[#FFFFFF] h-[397px] rounded-3xl">
@@ -65,13 +65,14 @@ const CalendarWidget: FC<CalendarWidgetProps> = () => {
             ))}
           </div>
           <div className="h-0">
-          <div className="flex justify-end">
-          <div className="rounded-full transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 hover:duration-300 left-5 justify-end relative bottom-[70px] bg-white dark:bg-[#232429] p-2 w-fit">
-          <button className="bg-gradient-to-r from-[#F2612C] to-[#FCCC0B] w-fit rounded-full p-2"><FaPlus color="white" size={28}/></button>
+            <div className="flex justify-end">
+              <div className="rounded-full transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 hover:duration-300 left-5 justify-end relative bottom-[70px] bg-white dark:bg-[#232429] p-2 w-fit">
+                <button className="bg-gradient-to-r from-[#F2612C] to-[#FCCC0B] w-fit rounded-full p-2">
+                  <FaPlus color="white" size={28} />
+                </button>
+              </div>
+            </div>
           </div>
-          </div>
-          </div>
-
         </div>
       </div>
     </div>

@@ -16,13 +16,13 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className="dark">
-      <body   className={`${inter.className} dark:bg-[#1E1F23] dark:text-white`}>
+    <html lang="en" className="overflow-scroll dark  no-scrollbar">
+      <body
+        className={`${inter.className} overflow-scroll no-scrollbar dark:bg-[#1E1F23] dark:text-white`}
+      >
         <div className="flex">
-        <SideBar />
-        <div className="w-full ">
-        {children}
-        </div>
+          <SideBar />
+          <div className="w-full ">{children}</div>
         </div>
       </body>
     </html>

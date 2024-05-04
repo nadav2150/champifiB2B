@@ -1,54 +1,128 @@
-'use client'
+"use client";
 
-import type { FC } from 'react';
+import type { FC } from "react";
 import Image from "next/image";
-import { HiMiniUserGroup } from 'react-icons/hi2';
+import { HiMiniUserGroup } from "react-icons/hi2";
+import { BsThreeDotsVertical } from "react-icons/bs";
 
 interface TeamWidgetProps {}
 
 const TeamWidget: FC<TeamWidgetProps> = () => {
-    return         <div className="bg-white h-72 rounded-3xl p-4 shadow-[-10px_-10px_30px_4px_rgba(0,0,0,0.1),_10px_10px_30px_4px_rgba(45,78,255,0.15)]">
-    <div className="flex justify-between items-center">
-      <h2 className="text-xl text-slate-700">Teams</h2>
-      <div className="flex gap-1 items-center">
-        <p className="font-semibold text-sm">21</p>
-        <HiMiniUserGroup className=" text-orange-700" />
-      </div>
-    </div>
-    <div className="p-2">
-      <div>
-        <p>Coach</p>
-        <div className="flex flex-col items-center w-fit p-2">
-          <Image
-            src="https://i.pravatar.cc"
-            className=" rounded-full"
-            alt="Picture of the author"
-            width={40}
-            height={40}
-          />
-          <p className="text-xs font-bold">John Doe</p>
-        </div>
-      </div>
-      <div>
-        <p>Players</p>
-        <div className="flex gap-4 p-2 overflow-scroll no-scrollbar">
-        {Array.from({ length: 8 }).map((player,index) => (
-          <div key={index} className="flex flex-col items-center w-fit">
-            <Image
-              src="https://i.pravatar.cc"
-              width={40}
-              height={40}
-              className=" rounded-full"
-              alt="Picture of the author"
-            />
-            <p className="text-xs font-bold">John Doe</p>
-          </div>
-        ))}
-        </div>
+  return (
+    <div className=" w-[1000px] flex-1 xs:max-sm:w-[350px]">
+      <div className="text-xl dark:text-white">Teams</div>
+      <div className="flex overflow-scroll mt-4 gap-4 no-scrollbar">
+        {Array.from({ length: 20 }).map((team) => {
+          return (
+            <div
+              id="team-card"
+              className="min-w-[330px]  text-lg p-6 h-[344px]  flex flex-col gap-4  dark:bg-[#232429] bg-[#FFFFFF]  rounded-3xl "
+            >
+              <div className="flex justify-between items-center ">
+                <p className="text-[#909090] dark:text-[#CCCCCC]">Football</p>
+                <BsThreeDotsVertical color="#1C274C" />
+              </div>
+              <div className="flex flex-col gap-4">
+                <p className="text-[#1C274C] dark:text-white">
+                  Real madrid Young Ⅱ
+                </p>
+                <div className="flex flex-col gap-4">
+                  <p className="text-[#909090]">Members</p>
 
+                  <div className="flex items-center overflow-scroll no-scrollbar">
+                    {Array.from({ length: 5 }).map((player, index) => (
+                      <div
+                        key={index}
+                        className=" mr-[-15px] items-center w-fit"
+                      >
+                        <Image
+                          src={`https://i.pravatar.cc/?img=${index}`}
+                          width={40}
+                          height={40}
+                          className=" rounded-full"
+                          alt="Picture of the author"
+                        />
+                      </div>
+                    ))}
+                    <div className="ml-6 text-[#909090]">+5</div>
+                  </div>
+                </div>
+
+                <div className="flex flex-col gap-4">
+                  <p className="text-[#909090]">Coaches</p>
+
+                  <div className="flex items-center overflow-scroll no-scrollbar">
+                    {Array.from({ length: 2 }).map((player, index) => (
+                      <div
+                        key={index}
+                        className=" mr-[-15px] items-center w-fit"
+                      >
+                        <Image
+                          src={`https://i.pravatar.cc/?img=${index}`}
+                          width={40}
+                          height={40}
+                          className=" rounded-full"
+                          alt="Picture of the author"
+                        />
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            </div>
+          );
+        })}
+        <div
+          id="team-card"
+          className="w-[330px]  text-lg p-6 h-[344px]  flex flex-col gap-4  dark:bg-[#232429] bg-[#FFFFFF]  rounded-3xl "
+        >
+          <div className="flex justify-between items-center">
+            <p className="text-[#909090]">Football</p>
+            <BsThreeDotsVertical color="#1C274C" />
+          </div>
+          <div className="flex flex-col gap-4">
+            <p className="text-[#1C274C]">Real madrid Young Ⅱ</p>
+            <div className="flex flex-col gap-4">
+              <p className="text-[#909090]">Members</p>
+
+              <div className="flex items-center overflow-scroll no-scrollbar">
+                {Array.from({ length: 4 }).map((player, index) => (
+                  <div key={index} className=" mr-[-15px] items-center w-fit">
+                    <Image
+                      src={`https://i.pravatar.cc/?img=${index}`}
+                      width={40}
+                      height={40}
+                      className=" rounded-full"
+                      alt="Picture of the author"
+                    />
+                  </div>
+                ))}
+                <div className="ml-6 text-[#909090]">+5</div>
+              </div>
+            </div>
+
+            <div className="flex flex-col gap-4">
+              <p className="text-[#909090]">Coaches</p>
+
+              <div className="flex items-center overflow-scroll no-scrollbar">
+                {Array.from({ length: 2 }).map((player, index) => (
+                  <div key={index} className=" mr-[-15px] items-center w-fit">
+                    <Image
+                      src={`https://i.pravatar.cc/?img=${index}`}
+                      width={40}
+                      height={40}
+                      className=" rounded-full"
+                      alt="Picture of the author"
+                    />
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
-  </div>
-}
+  );
+};
 
 export default TeamWidget;

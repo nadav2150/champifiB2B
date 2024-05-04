@@ -1,31 +1,43 @@
 "use client";
+
 import CalendarWidget from "@/components/CalendarWidget";
 import PaymentsWidget from "@/components/PaymentsWidget";
-import { HiMiniUserGroup } from "react-icons/hi2";
-import Link from "next/link";
-import { useState } from "react";
 import Image from "next/image";
 import TeamWidget from "@/components/TeamWidget";
 import FinancialWidget from "@/components/FinancialWidget";
+import DocumentsWidget from "@/components/DocumentsWidget";
 
 export default function Dashboard() {
-  const [search, setSearch] = useState("");
-
   return (
-    <div className="p-5">
-      <div id='header' className="flex justify-end shrink">
-      <Image
-              src="https://i.pravatar.cc"
+    <div className="p-5  h-screen overflow-scroll no-scrollbar">
+      <div id="header" className="flex justify-end shrink">
+        <Image
+          src="https://i.pravatar.cc"
+          width={40}
+          height={40}
+          className=" rounded-full"
+          alt="Picture of the author"
+        />
+      </div>
+      <div id="body" className="flex flex-wrap gap-8">
+        <CalendarWidget />
+        <FinancialWidget />
+        <div className="flex-1">
+          <PaymentsWidget />
+          <button className="w-full mt-8 flex text-xl hover:opacity-90  items-center justify-center gap-2 rounded-2xl font-bold text-white  h-20 bg-[#1C274C]">
+            Send Notifications
+            <Image
+              src="/bell.png"
               width={40}
               height={40}
               className=" rounded-full"
               alt="Picture of the author"
             />
-      </div>
-      <div id='body' className="flex flex-wrap gap-8">
-        <CalendarWidget />
-        <FinancialWidget/>
-        <PaymentsWidget />
+          </button>
+        </div>
+
+        <TeamWidget />
+        <DocumentsWidget />
         {/* <PaymentsWidget />
         <TeamWidget/>
 

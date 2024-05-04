@@ -19,8 +19,16 @@ const List = [
   { name: "Teams", icon: <GrGroup size={24} />, route: "/teams" },
   { name: "Payments", icon: <FaMoneyBillWave size={24} />, route: "/payments" },
   { name: "Calendar", icon: <FaCalendarWeek size={24} />, route: "/calendar" },
-  { name: "Notifications", icon: <MdNotificationsActive size={24} />, route: "/notifications" },
-  { name: "Documents", icon: <IoDocumentSharp size={24} />, route: "/documents" },
+  {
+    name: "Notifications",
+    icon: <MdNotificationsActive size={24} />,
+    route: "/notifications",
+  },
+  {
+    name: "Documents",
+    icon: <IoDocumentSharp size={24} />,
+    route: "/documents",
+  },
   { name: "Settings", icon: <IoSettings size={24} />, route: "/settings" },
 ];
 
@@ -34,7 +42,9 @@ const SideBar: FC<SideBarProps> = () => {
   return (
     <div className={`xs:max-sm:absolute`}>
       <div
-        className={`h-screen duration-300  ${!isOpen && 'xs:max-sm:hidden'} text-white bg-[#1C274C] dark:bg-[#232429] p-5 relative ${
+        className={` h-screen duration-300  ${
+          !isOpen && "xs:max-sm:hidden"
+        } text-white bg-[#1C274C] dark:bg-[#232429] p-5 relative ${
           isOpen ? "w-72" : "w-20"
         }`}
       >
@@ -54,11 +64,11 @@ const SideBar: FC<SideBarProps> = () => {
           {List.map((item, index) => {
             return (
               <Link href={item.route} key={index}>
-              
                 <div
-
                   className={`flex items-center gap-2 cursor-pointer p-2 rounded-md ${
-                    isSelect === index ? "bg-gradient-to-r from-[#F2612C] to-[#FCCC0B]" : "hover:bg-slate-700"
+                    isSelect === index
+                      ? "bg-gradient-to-r from-[#F2612C] to-[#FCCC0B]"
+                      : "hover:bg-slate-700"
                   }`}
                   onClick={() => setSelect(index)}
                 >
@@ -71,12 +81,17 @@ const SideBar: FC<SideBarProps> = () => {
           })}
         </div>
       </div>
-      <div id="mobile-menu" className={`pt-8 pl-4 pl z-50 absolute-5 sm:hidden ${isOpen && 'hidden'}`}>
-      <TiThMenu 
-            onClick={() => setOpen(!isOpen)}
-            className={`text-xl text-orange-500 cursor-pointer duration-700`}
-            width={40}
-          />
+      <div
+        id="mobile-menu"
+        className={`pt-8 pl-4 pl z-50 absolute-5 sm:hidden ${
+          isOpen && "hidden"
+        }`}
+      >
+        <TiThMenu
+          onClick={() => setOpen(!isOpen)}
+          className={`text-xl text-orange-500 cursor-pointer duration-700`}
+          width={40}
+        />
       </div>
     </div>
   );

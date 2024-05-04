@@ -78,7 +78,7 @@ interface FinancialWidgetProps {}
 
 const FinancialWidget: FC<FinancialWidgetProps> = () => {
   return (
-    <div className=" w-[600px] xs:max-sm:w-[450px]">
+    <div className="min-w-[600px]  xs:max-sm:min-w-full flex-1 shrink xs:max-sm:w-[450px]">
       <div className="flex justify-between items-center">
         <div className="text-xl dark:text-white">Financial Overview</div>
 
@@ -88,13 +88,13 @@ const FinancialWidget: FC<FinancialWidgetProps> = () => {
             autoFocus={true}
             className="px-4  py-2 text-xs font-medium text-gray-900 bg-white rounded-s-lg hover:bg-gray-100   hover:text-blue-700 focus:z-10  focus:bg-[#1C274C] focus:text-white dark:bg-[#232429]  dark:text-[#999999] dark:hover:text-white dark:hover:bg-gray-700  dark:focus:text-white dark:focus:bg-[#1C274C]"
           >
-           Last 30 Days
+            Last 30 Days
           </button>
           <button
             type="button"
             className="px-4 py-2 text-xs font-medium text-gray-900 bg-white  rounded-e-lg  border-gray-200 hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:bg-[#1C274C] focus:text-white    dark:bg-[#232429] dark:text-[#999999] dark:hover:text-white dark:hover:bg-gray-700 dark:focus:bg-[#1C274C] dark:focus:text-white"
           >
-             Last 7 Days
+            Last 7 Days
           </button>
         </div>
       </div>

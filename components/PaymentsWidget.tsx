@@ -6,7 +6,7 @@ interface PaymentsWidgetProps {}
 
 const PaymentsWidget: FC<PaymentsWidgetProps> = () => {
   return (
-    <div className=" w-[450px]">
+    <div className="flex-1">
       <div className="flex justify-between items-center">
         <div className="text-xl dark:text-white">Recent Payments</div>
         <div className="text-xs text-[#999999] dark:text-white">View More</div>
@@ -19,13 +19,13 @@ const PaymentsWidget: FC<PaymentsWidgetProps> = () => {
               <div className="flex justify-between">
                 <div className="flex w-fit items-center gap-2">
                   <div className="bg-gradient-to-r from-[#F2612C] to-[#FCCC0B] rounded-full p-[0.8px]">
-                  <Image
-                    src="https://i.pravatar.cc"
-                    width={40}
-                    height={40}
-                    className=" rounded-full  h-[40px]  border-orange-900 border-2"
-                    alt="Picture of the author"
-                  />
+                    <Image
+                      src="https://i.pravatar.cc"
+                      width={40}
+                      height={40}
+                      className=" rounded-full  h-[40px]  border-orange-900 border-2"
+                      alt="Picture of the author"
+                    />
                   </div>
 
                   <div>
@@ -45,22 +45,6 @@ const PaymentsWidget: FC<PaymentsWidgetProps> = () => {
           })}
         </div>
       </div>
-      {/* <div className=" overflow-scroll no-scrollbar bg-white  h-72 rounded-3xl p-3">
-        <div className="flex justify-between items-center">
-          <h2 className="text-xl text-slate-700">Recent Payments</h2>
-          <Link
-            href={"/payments"}
-            className=" text-sm  hover:underline text-orange-600"
-          >
-            View All
-          </Link>
-        </div>
-        <div className="flex-col">
-          {Array.from({ length: 5 }).map((_, index) => (
-            <AvatarListItem key={index} />
-          ))}
-        </div>
-      </div> */}
     </div>
   );
 };
