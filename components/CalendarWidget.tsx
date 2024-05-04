@@ -19,7 +19,7 @@ const CalendarWidget: FC<CalendarWidgetProps> = () => {
 
   return (
     <div className=" w-[450px]">
-      <div className="text-xl">Upcoming Events</div>
+      <div className="text-xl dark:text-white">Upcoming Events</div>
       <div className="">
         <div className=" p-4 flex flex-col mt-2 dark:bg-[#232429] bg-[#FFFFFF] h-[397px] rounded-3xl">
           <div

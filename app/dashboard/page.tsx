@@ -6,6 +6,7 @@ import Link from "next/link";
 import { useState } from "react";
 import Image from "next/image";
 import TeamWidget from "@/components/TeamWidget";
+import FinancialWidget from "@/components/FinancialWidget";
 
 export default function Dashboard() {
   const [search, setSearch] = useState("");
@@ -23,6 +24,7 @@ export default function Dashboard() {
       </div>
       <div id='body' className="flex flex-wrap">
         <CalendarWidget />
+        <FinancialWidget/>
         {/* <PaymentsWidget /> */}
         {/* <PaymentsWidget />
         <TeamWidget/>
