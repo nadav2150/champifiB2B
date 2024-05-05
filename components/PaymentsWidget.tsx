@@ -6,7 +6,7 @@ interface PaymentsWidgetProps {}
 
 const PaymentsWidget: FC<PaymentsWidgetProps> = () => {
   return (
-    <div className="flex-1">
+    <div className="flex-1 min-w-[350px]">
       <div className="flex justify-between items-center">
         <div className="text-xl dark:text-white">Recent Payments</div>
         <div className="text-xs text-[#999999] dark:text-white">View More</div>
