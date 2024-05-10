@@ -24,7 +24,7 @@ export default function Dashboard() {
         <FinancialWidget />
         <div className="flex-1">
           <PaymentsWidget />
-          <button className="w-full mt-8 flex text-xl hover:opacity-90  items-center justify-center gap-2 rounded-2xl font-bold text-white  h-20 bg-[#1C274C]">
+          <button className="w-full xs:max-sm:hidden bottom-0 mt-8 flex text-xl hover:opacity-90  items-center justify-center gap-2 rounded-2xl font-bold text-white  h-20 bg-[#1C274C]">
             Send Notifications
             <Image
               src="/bell.png"
@@ -38,6 +38,16 @@ export default function Dashboard() {
 
         <TeamWidget />
         <DocumentsWidget />
+        <button className="w-full sm:hidden bottom-0 mt-8 flex text-xl hover:opacity-90  items-center justify-center gap-2 rounded-2xl font-bold text-white  h-20 bg-[#1C274C]">
+          Send Notifications
+          <Image
+            src="/bell.png"
+            width={40}
+            height={40}
+            className=" rounded-full"
+            alt="Picture of the author"
+          />
+        </button>
         {/* <PaymentsWidget />
         <TeamWidget/>
 

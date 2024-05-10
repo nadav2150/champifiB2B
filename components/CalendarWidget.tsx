@@ -8,7 +8,7 @@ interface CalendarWidgetProps {}
 const today = new Date();
 
 // Get the date one week from today
-const oneWeekFromToday = add(today, { weeks: 1 });
+const oneWeekFromToday = add(today, { days: 6 });
 
 // Get all dates between today and one week from today
 const dates = eachDayOfInterval({ start: today, end: oneWeekFromToday });

@@ -40,7 +40,7 @@ const SideBar: FC<SideBarProps> = () => {
   const [isSelect, setSelect] = useState(initialSelectedIndex);
 
   return (
-    <div className={`xs:max-sm:absolute`}>
+    <div className={`xs:max-sm:absolute z-50`}>
       <div
         className={` h-screen duration-300  ${
           !isOpen && "xs:max-sm:hidden"
