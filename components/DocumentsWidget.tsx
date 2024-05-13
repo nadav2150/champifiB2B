@@ -20,10 +20,7 @@ const DocumentsWidget: FC<DocumentsWidgetProps> = () => {
                       <p className="text-[#1C274C]  font-semibold dark:text-white">
                         Contract John Doe
                       </p>
-                      <p className="text-xs text-[#666666]">
-                        {" "}
-                        20/04/2024 22:03
-                      </p>
+                      <p className="text-xs text-[#666666]">20/04/2024 22:03</p>
                     </div>
                   </div>
 
@@ -33,21 +30,6 @@ const DocumentsWidget: FC<DocumentsWidgetProps> = () => {
                 </div>
               );
             })}
-          </div>
-          <div className="flex items-center justify-between gap-2">
-            <div className="flex gap-2">
-              <FaFilePdf color="#F95555" size={36} />
-              <div className="flex flex-col ">
-                <p className="text-[#1C274C]  font-semibold">
-                  Contract John Doe
-                </p>
-                <p className="text-xs text-[#666666]"> 20/04/2024 22:03</p>
-              </div>
-            </div>
-
-            <div className="bg-[#1C274C]   w-12 h-9 flex items-center justify-center rounded-xl hover:opacity-85 cursor-pointer">
-              <MdDownload size={24} color="white" />
-            </div>
           </div>
         </div>
       </div>

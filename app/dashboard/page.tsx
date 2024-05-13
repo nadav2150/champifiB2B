@@ -48,18 +48,6 @@ export default function Dashboard() {
             alt="Picture of the author"
           />
         </button>
-        {/* <PaymentsWidget />
-        <TeamWidget/>
-
-        <div className=" bg-white h-72 rounded-3xl p-7">
-          <h2 className="text-2xl text-slate-700">Settings</h2>
-          <p>21</p>
-        </div>
-
-        <div className="bg-white h-72 rounded-3xl p-7">
-          <h2 className="text-2xl text-slate-700">Settings</h2>
-          <p>21</p>
-        </div> */}
       </div>
     </div>
   );

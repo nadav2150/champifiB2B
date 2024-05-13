@@ -1,113 +1,131 @@
-import DropDownMenu from "@/components/DropDownMenu";
 import Image from "next/image";
+import Header from "./Header";
+import CalendarWidget from "@/components/CalendarWidget";
+import PieWidget from "@/components/PieWidget";
 
 export default function Dashboard() {
   return (
-    <>
-      <div className="p-5 h-screen overflow-scroll no-scrollbar bg-[#FBFBFB] xs:max-sm:hidden">
-        <div className=" rounded-lg bg-[#ffffff] min-h-24 flex items-center gap-2 justify-between flex-wrap">
-          <div className=" pl-4  shrink-0">
-            <p className="text-[#1C274C] text-lg font-bold">
-              Total Number of Teams
-            </p>
-            <p className="text-xl  font-bold">28 Teams</p>
-          </div>
+    <div className="overflow-auto no-scrollbar ">
+      <Header />
+      <div id="container" className="max-h-[85vh]  flex p-4 gap-4">
+        <div id="leftSide" className=" overflow-x-hidden no-scrollbar flex-[1]">
+          <div className="flex flex-col gap-4">
+            <div className="mt-4">
+              <p className="text-[#1C274C] font-l font-bold">
+                Arizona Football Team
+              </p>
+              <div
+                id="coachCard"
+                className="bg-white border border-[#EEEEEE] rounded-xl h-[331px] p-4 mt-2"
+              >
+                <div
+                  id="coachHeader"
+                  className="flex justify-between items-center p-2"
+                >
+                  <div>
+                    <p className="text-[#1C274C] font-semibold">Bob Johnson</p>
+                    <p className="text-[#1C274C] text-sm flex">
+                      <Image
+                        src={`https://flagcdn.com/24x18/es.png`}
+                        width={20}
+                        height={20}
+                        alt="Picture of  author"
+                        className="p-1"
+                      />
+                      | ⚽ Titans Football team
+                    </p>
+                  </div>
 
-          <div className="flex items-center overflow-scroll no-scrollbar">
-            {Array.from({ length: 5 }).map((player, index) => (
-              <div key={index} className=" mr-[-15px] items-center w-fit">
-                <Image
-                  src={`https://i.pravatar.cc/?img=${index}`}
-                  width={40}
-                  height={40}
-                  className=" rounded-full"
-                  alt="Picture of the author"
-                />
+                  <button className=" flex text-l hover:opacity-90 shrink-0 dark:bg-gradient-to-r from-[#F2612C] to-[#FCCC0B] text-xs  items-center justify-center gap-2 w-fit px-4 p-2  rounded-xl font-bold text-white  bg-[#1C274C]">
+                    Assign Coach
+                  </button>
+                </div>
+                <div id="coachBody" className="mt-8 p-2">
+                  <div className="flex gap-4 overflow-scroll no-scrollbar max-w-full">
+                    {Array.from({ length: 100 }).map((item, index) => (
+                      <div className="flex flex-col items-center">
+                        <Image
+                          src={`https://i.pravatar.cc/?img=${index}`}
+                          width={60}
+                          height={60}
+                          className=" rounded-full"
+                          alt="Picture of  author"
+                        />
+                        <div className=" text-center w-[70px]">
+                          <p className="text-[#1C274C] text-l font-semibold">
+                            Jon Doe
+                          </p>
+                          <p className=" text-sm">coach</p>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                </div>
               </div>
-            ))}
-            <div className="ml-6 text-[#000000] font-semibold">+2</div>
-          </div>
-          <div className="flex gap-2">
-            <DropDownMenu
-              label={"By Coach"}
-              options={[
-                "option1",
-                "option2",
-                "option3",
-                "option4",
-                "option5",
-                "option6",
-              ]}
-            />
-            <DropDownMenu
-              label={"By Coach"}
-              options={[
-                "option1",
-                "option2",
-                "option3",
-                "option4",
-                "option5",
-                "option6",
-              ]}
-            />
-            <button className=" flex text-l hover:opacity-90 shrink-0  items-center justify-center gap-2 w-fit p-2 px-5 rounded-xl font-bold text-white  bg-[#1C274C]">
-              Add New Team
-            </button>
-          </div>
-        </div>
-      </div>
-
-      <div id="mobile" className=" h-screen">
-        <div className="text-xs  mt-16 p-6 bg-white border rounded-lg sm:hidden">
-          <div className="flex justify-between">
-            <div className=" pl-4">
-              <p className="text-[#1C274C]  font-bold">Total Number of Teams</p>
-              <p className="font-bold text-sm">28 Teams</p>
             </div>
-            <button className=" flex text-l hover:opacity-90 shrink-0  items-center justify-center gap-2 w-fit p-2 px-5 rounded-xl font-bold text-white  bg-[#1C274C]">
-              Add New Team
-            </button>
-          </div>
-          <div className="flex items-center overflow-scroll no-scrollbar p-4">
-            {Array.from({ length: 5 }).map((player, index) => (
-              <div key={index} className=" mr-[-15px] items-center w-fit">
-                <Image
-                  src={`https://i.pravatar.cc/?img=${index}`}
-                  width={40}
-                  height={40}
-                  className=" rounded-full"
-                  alt="Picture of the author"
-                />
+            <div>
+              <p className="text-[#1C274C] font-l font-bold">
+                Arizona Football Team
+              </p>
+              <div
+                id="playerCard"
+                className="bg-white border border-[#EEEEEE] rounded-xl h-[331px] p-4"
+              >
+                <div
+                  id="playerHeader"
+                  className="flex justify-between items-center p-2"
+                >
+                  <div>
+                    <p className="text-[#1C274C] font-semibold">Predatores</p>
+                    <p className="text-[#1C274C] text-sm flex">
+                      <Image
+                        src={`https://flagcdn.com/24x18/es.png`}
+                        width={20}
+                        height={20}
+                        alt="Picture of  author"
+                        className="p-1"
+                      />
+                      | ⚽ 12 Players
+                    </p>
+                  </div>
+
+                  <button className=" flex text-l hover:opacity-90 shrink-0 dark:bg-gradient-to-r from-[#F2612C] to-[#FCCC0B] text-xs  items-center justify-center gap-2 w-fit px-4 p-2  rounded-xl font-bold text-white  bg-[#1C274C]">
+                    Assign Player
+                  </button>
+                </div>
+                <div id="playerBody" className="mt-8 p-2">
+                  <div className="flex gap-4 overflow-scroll no-scrollbar max-w-full">
+                    {Array.from({ length: 100 }).map((item, index) => (
+                      <div className="flex flex-col items-center">
+                        <Image
+                          src={`https://i.pravatar.cc/?img=${index}`}
+                          width={60}
+                          height={60}
+                          className=" rounded-full"
+                          alt="Picture of  author"
+                        />
+                        <div className=" text-center w-[70px]">
+                          <p className="text-[#1C274C] text-l font-semibold">
+                            Jon Doe
+                          </p>
+                          <p className=" text-sm">coach</p>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                </div>
               </div>
-            ))}
-            <div className="ml-6 text-[#000000] font-semibold">+2</div>
+            </div>
           </div>
         </div>
-        <div className="flex justify-between m-2">
-          <DropDownMenu
-            label={"By Coach"}
-            options={[
-              "option1",
-              "option2",
-              "option3",
-              "option4",
-              "option5",
-              "option6",
-            ]}
-          />
-          <DropDownMenu
-            label={"By Coach"}
-            options={[
-              "option1",
-              "option2",
-              "option3",
-              "option4",
-              "option5",
-              "option6",
-            ]}
-          />
+
+        <div id="rightSide" className="flex-[1]">
+          <CalendarWidget />
+          <div className="flex justify-center  rounded-xl">
+            <PieWidget />
+          </div>
         </div>
       </div>
-    </>
+    </div>
   );
 }
